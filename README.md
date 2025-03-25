@@ -69,9 +69,112 @@ The following figure shows a cloud of words containing the "most useful" words i
 
 ## Summary of Key Findings
 
+1. Dataset Characteristics and Preprocessing:
+
+Classification Task: The goal is to classify genetic mutations into 9 classes based on clinical text evidence.
+
+- **Data Structure**:
+
+Two datasets: training_variants (genetic mutation information) and training_text (clinical text).
+Linked via the ID field.
+training_text and test_text files are double pipe (||) delimited.
+
+- **Class Imbalance**:
+
+Classes 3, 8, and 9 have significantly fewer instances than other classes, which likely impacts model performance for those classes.
+Analysis focused on classes 1, 2, 4, 6, and 7, which have more than 300 instances.
+
+2. **Text Preprocessing**:
+
+Text length was limited to sentences between 1000 and 2000 words.
+The last 200 characters of the "Text" column were selected, likely for computational efficiency.
+Stopwords and punctuation were removed.
+Lemmatization and stemming were performed.
+Feature engineering produced sentence length variables for "Gene" and "Variation".
+
+3. **Variation Simplification**:
+
+The "Variation" feature primarily consists of single-word entries.
+Data was simplified to include only single-word variations.
+Gene filtering:
+Genes with more than 10 instances were filtered.
+
+4. **Modeling and Results**:
+
+Model: Random Forest Classifier.
+Feature Extraction: TF-IDF Vectorizer.
+Data Splitting: Training and testing sets were used.
+Performance: Achieved an overall accuracy of 0.6 on the testing set.
+
+5. **Limitations**:
+
+Class imbalance negatively impacted performance.
+Computational resource limitations led to significant data simplification.
+Visualizations:
+
+6. **Class Distribution Bar Plot**: 
+
+Shows the imbalance in class representation.
+Word Count Histogram: Illustrates the distribution of word counts in the text data.
+Variation Length Histogram: Shows that most "Variation" entries are single words.
+Model Results Chart: Displays the performance of the Random Forest Classifier.
+Word Cloud: Highlights the most frequent and "useful" words in the dataset.
 
 
 ## Real-world usage scenario
+
+The analysis of genetic mutations and their classification based on clinical text evidence has significant real-world applications, particularly in the fields of medicine and biotechnology. Here are some key usages:
+
+1. Personalized Medicine and Cancer Treatment:
+
+- **Targeted Therapies**:
+
+Identifying specific genetic mutations allows doctors to tailor treatments to individual patients. For example, knowing the exact mutation in a cancer tumor helps select the most effective drugs.
+This approach, known as personalized or precision medicine, improves treatment outcomes and reduces side effects.
+
+- **Risk Assessment**:
+
+Classifying mutations can help assess a patient's risk of developing certain diseases, particularly cancers.
+This allows for earlier detection and preventive measures.
+
+- **Drug Development**:
+
+Understanding the relationship between genetic mutations and disease helps researchers develop new drugs that target specific mutations.
+
+2. Genetic Disease Diagnosis and Management:
+
+- **Rare Disease Diagnosis**:
+
+Many rare genetic diseases are caused by specific mutations. Analyzing genetic data and clinical text helps diagnose these conditions.
+This is crucial for providing appropriate care and support to patients.
+
+- **Genetic Counseling**:
+
+Classifying mutations helps genetic counselors assess the risk of inherited diseases in families.
+This allows them to provide informed advice to individuals and families.
+
+3. Research and Development:
+
+- **Understanding Disease Mechanisms**:
+
+Analyzing genetic mutations helps researchers understand the underlying mechanisms of diseases.
+This knowledge is essential for developing new treatments and preventive strategies.
+
+- **Biotechnology Applications**:
+
+Genetic mutation analysis is used in various biotechnology applications, such as gene editing and gene therapy.
+It helps ensure the accuracy and safety of these technologies.
+
+4. Clinical Decision Support:
+
+- **Automated Interpretation of Clinical Data**:
+
+Machine learning models can help automate the interpretation of complex clinical data, including genetic information.
+This supports clinicians in making informed decisions.
+
+- **Improving Efficiency**:
+
+Automating the classification of genetic mutations can save time and resources in clinical settings.
 
 
 ## MIT License
