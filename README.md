@@ -19,3 +19,27 @@ test_variants - a comma separated file containing the description of the genetic
 test_text - **a double pipe (||) delimited file that contains the clinical evidence (text) used to classify genetic mutations**. Fields are ID (the id of the row used to link the clinical evidence to the genetic mutation), Text (the clinical evidence used to classify the genetic mutation)
 submissionSample - a sample submission file in the correct format
 
+## Results
+
+### Bar plot of class's instances
+
+![logo](images/1_class_counts.png)
+
+### Histogram of words
+
+![logo](images/2_wordcount_hist.png)
+
+###
+
+![logo](images/3_variationlen.png)
+
+
+### Machine Learning Modeling
+
+![logo](images/4_modelresults.png)
+
+### Cloud of Words
+
+![logo](images/5_wordscloud.png)
+
+
